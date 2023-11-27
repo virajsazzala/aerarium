@@ -3,9 +3,6 @@ aerarium
 
 A simple command line interface for managing my finances.
 
-.. note::
-
-   This project is under active development.
 
 Features
 --------
@@ -49,3 +46,5 @@ Some examples:
    Balance: 1400
 
 The configuration file contains the account name and starting balance.
+
+**Note**: This project is under active development.
