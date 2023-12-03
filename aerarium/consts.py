@@ -1,4 +1,8 @@
 import os
+import sys
 
-DATA_FILE_PATH = "~/.config/aerarium/transactions.json"
-CONFIG_FILE_PATH = "~/.config/aerarium/config.json"
+HOME = os.path.expanduser("~")
+AERARIUM_PATH = os.path.join(HOME, ".config", "aerarium")
+
+CONFIG_FILE_PATH = os.path.join(AERARIUM_PATH, "config.yaml")
+DATA_FILE_PATH = os.path.join(AERARIUM_PATH, "transactions.json")
