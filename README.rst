@@ -1,7 +1,7 @@
 aerarium
 ============
 
-A simple command line interface for tracking my finances.
+A simple command line tool for tracking my finances.
 
 
 Features
