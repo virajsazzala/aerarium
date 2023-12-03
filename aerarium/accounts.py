@@ -1,5 +1,7 @@
 import uuid
-from aerarium.utils import append_to_json, update_config
+from aerarium.utils import append_to_json, update_config, get_transactions
+from tabulate import tabulate
+from colorama import Fore, Style
 
 
 class Accounts:
@@ -42,9 +44,41 @@ class Accounts:
     def check_balance(self):
         return self.account_balance
 
+    @staticmethod
+    def get_transactions():
+        transactions = get_transactions()
+
+        # Format transactions for the table
+        table_data = []
+        for idx, transaction in enumerate(transactions, start=1):
+            if transaction["type"] == "withdraw":
+                transaction["amount"] = -transaction["amount"]
+            amount = float(transaction["amount"])
+
+            desc = transaction["desc"][:15]
+            desc = f"{desc}..." if len(transaction["desc"]) > 15 else desc
+
+            category = transaction["category"]
+            formatted_amount = f"{amount:,.2f}"
+
+            # Color the amount based on its sign
+            if amount < 0:
+                formatted_amount = f"{Fore.RED}{formatted_amount}{Style.RESET_ALL}"
+            else:
+                formatted_amount = f"{Fore.GREEN}{formatted_amount}{Style.RESET_ALL}"
+
+            table_data.append([idx, formatted_amount, category, desc])
+
+        table_headers = ["N", "Amount", "Category", "Description"]
+        table = tabulate(table_data, headers=table_headers, tablefmt="pretty")
+
+        print(table)
+
 
 if __name__ == "__main__":
     a = Accounts("viraj", 3000)
     print(a.check_balance())
     print(a.withdraw(2000, "salary", "income"))
     print(a.deposit(5000, "salary", "income"))
+    print(get_transactions())
+    a.get_transactions()

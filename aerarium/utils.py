@@ -50,6 +50,14 @@ def append_to_json(new_data):
         json.dump(existing_data, file, indent=2)
 
 
+def get_transactions():
+    file_path = DATA_FILE_PATH
+    with open(file_path, "r") as file:
+        transactions = json.load(file)
+
+    return transactions
+
+
 if __name__ == "__main__":
     config = generate_config()
     make_config(config)
