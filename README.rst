@@ -23,7 +23,7 @@ Features
 
 - List transactions
   
-    Use the ``--transactions`` or ``-t`` flag to print a list of all transactions.
+  Use the ``--transactions`` or ``-t`` flag to print a list of all transactions.
 
 - Help information
 
