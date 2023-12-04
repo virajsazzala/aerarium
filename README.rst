@@ -3,6 +3,22 @@ aerarium
 
 A simple command line tool for tracking my finances.
 
+Installation
+------------
+
+Install using `pip <https://pypi.org/project/aerarium/>`_:
+
+.. code-block::
+
+   $ pip install aerarium
+
+Install from source:
+
+.. code-block::
+
+   $ git clone https://github.com/virajsazzala/aerarium.git
+   $ cd aerarium
+   $ python setup.py install
 
 Features
 --------

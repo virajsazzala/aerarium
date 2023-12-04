@@ -3,3 +3,5 @@ data.json
 config.yaml
 __pycache__/
 *.egg-info/
+build/
+dist/
