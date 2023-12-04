@@ -25,6 +25,10 @@ Features
   
   Use the ``--transactions`` or ``-t`` flag to print a list of all transactions.
 
+- Predict spending
+    
+  Use the ``--predict <number_of_days>`` or ``-p <number_of_days>`` flag to print a prediction of spending for next n days.
+
 - Help information
 
   Use ``--help`` to print usage help.

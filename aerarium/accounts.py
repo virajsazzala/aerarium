@@ -2,6 +2,7 @@ import uuid
 from aerarium.utils import append_to_json, update_config, get_transactions
 from tabulate import tabulate
 from colorama import Fore, Style
+from datetime import datetime
 
 
 class Accounts:
@@ -14,6 +15,7 @@ class Accounts:
 
         transaction = {
             "transaction_id": str(uuid.uuid4()),
+            "data": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
             "amount": amount,
             "desc": desc,
             "category": category,
@@ -30,6 +32,7 @@ class Accounts:
 
         transaction = {
             "transaction_id": str(uuid.uuid4()),
+            "date": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
             "amount": amount,
             "desc": desc,
             "category": category,

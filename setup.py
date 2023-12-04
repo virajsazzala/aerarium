@@ -18,6 +18,8 @@ setup(
         "PyYAML",
         "tabulate",
         "colorama",
+        "pandas",
+        "scikit-learn",
     ],
     scripts=["scripts/aerarium"],
     classifiers=[
